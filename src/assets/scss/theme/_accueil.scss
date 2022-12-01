@@ -1,0 +1,45 @@
+body {
+    main {
+        section.banner {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2.5em;
+
+            img {
+                width: 100%;
+            }
+        }
+        section.intro {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2.5em;
+
+            div.containerIntro {
+                display: flex;
+                width: 63%;
+                img {
+                    display: flex;
+                }
+                div.introText {
+                    margin: 0 2em;
+                    display: flex;
+                    flex-direction: column;
+
+                    h1 {
+                        font-family: $boldFont;
+                        margin: 0;
+                        font-size: 4em;
+                        text-transform: uppercase;
+                        color: #191919;
+                    }
+                    img {
+
+                    }
+                    p {
+                        font-family: $mainFont;
+                    }
+                }
+            }
+        }
+    }
+}
