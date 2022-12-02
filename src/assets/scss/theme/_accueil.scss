@@ -16,27 +16,45 @@ body {
 
             div.containerIntro {
                 display: flex;
-                width: 63%;
+                justify-content: center;
+                width: 65vw;
                 img {
-                    display: flex;
+                    max-width: 30vw;
                 }
                 div.introText {
                     margin: 0 2em;
                     display: flex;
                     flex-direction: column;
 
-                    h1 {
-                        font-family: $boldFont;
-                        margin: 0;
-                        font-size: 4em;
-                        text-transform: uppercase;
-                        color: #191919;
-                    }
                     img {
-
+                        width: 10em;
+                        height: 2em;
+                        margin: 1em 0;
                     }
                     p {
                         font-family: $mainFont;
+                        max-width: 85%;
+                    }
+                }
+            }
+        }
+        section .results {
+            display: flex;
+            justify-content: center;
+
+            div.containerResults {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .textResult {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    img {
+                        width: 160px;
+                        height: 5px;
                     }
                 }
             }
