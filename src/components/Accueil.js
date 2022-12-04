@@ -32,7 +32,7 @@ const Accueil = () => {
             </section>
             <section className='results'>
                 <div className='containerResults'>
-                    <div className='textResult'>
+                    <div className='titleResult'>
                         <h2>Nos résultats</h2>
                         <img src={line} alt=""/>
                     </div>
