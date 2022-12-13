@@ -1,0 +1,43 @@
+section.adminPannel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+        color: $red;
+
+        &::after {
+            background-color: $red;
+        }
+    }
+
+    div.container {
+        min-width: 80%;
+        border: 1px solid rgba(50, 50, 93, 0.5);
+        padding: 2em;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+        div.buttons {
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid rgba(50, 50, 93, 0.5);
+
+            button {
+                font-family: $mainFont;
+                font-size: 1em;
+                width: 80%;
+                margin-bottom: 2em;
+                padding: 0.5em 0;
+            }
+
+            :last-child {
+                margin: 4em 0 2em 0;
+            }
+        }
+
+        div.content {
+            width: 70%;
+        }
+    }
+}

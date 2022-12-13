@@ -1,6 +1,6 @@
 import banner from '../assets/img/banner_accueil.png';
 import lanImg from '../assets/img/lan.jpg';
-import line from '../assets/img/trait.svg';
+// import ResultList from './ResultList';
 
 const Accueil = () => {
     return(
@@ -15,7 +15,6 @@ const Accueil = () => {
                     </div>
                     <div className="introText">
                         <h1>NOUS SOMMES SUPRA ESPORT</h1>
-                        <img src={line} alt="" className="trait" />
                         <p>
                         Bienvenue sur le site de la <strong>SUPRA ESPORT</strong>, une
                         équipe Esport Française, fondée sous loi 1901 par Romain BERTAUD
@@ -30,11 +29,11 @@ const Accueil = () => {
                     </div>
                 </div>
             </section>
-            <section className='results'>
-                <div className='containerResults'>
-                    <div className='titleResult'>
+            <section className="results">
+                <div className="containerResults">
+                    <div className="titleResult">
                         <h2>Nos résultats</h2>
-                        <img src={line} alt=""/>
+                        {/* <ResultList/> */}
                     </div>
                 </div>
             </section>

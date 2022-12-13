@@ -1,60 +1,55 @@
-body {
-    margin: 0;
-    div#root {
-        header {
-            nav.menu_nav {
-                background-color: $red;
-                display: flex;
-                justify-content: space-between;
-                padding: 10px 30px;
+header {
+    background-color: $red;
+    nav.menu_nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.4em 0;
 
-                .containerLogo {
-                    width: 600px;
-                    display: flex;
-                    justify-content: center;
-                }
+        .containerLogo {
+            width: 600px;
+            display: flex;
+            justify-content: center;
+        }
 
-                ul {
-                    display: flex;
-                    align-items: center;
-                    list-style-type: none;
-                    margin: 0;
-                    padding: 0;
-                    
-                    li.btn {
-                        border-right: 1px solid $white;
-                        a {
-                            position: relative;
-                            font-family: $mainFont;
-                            font-size: 20px;
-                            text-decoration: none;
-                            color: $white;
-                            margin: 0 35px;
-                            padding-bottom: 20px;
-        
-                            &::after {
-                                content: '';
-                                position: absolute;
-                                width: 100%;
-                                transform: scaleX(0);
-                                height: 1px;
-                                bottom: 8px;
-                                left: 0;
-                                background-color: $white;
-                                transform-origin: bottom;
-                                transition: transform 0.3s ease-out;
-                            }
-        
-                            &:hover::after {
-                                transform: scaleX(1);
-                                transform-origin: bottom;
-                            }
-                        }
+        ul {
+            display: flex;
+            align-items: center;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            
+            li.btn {
+                border-right: 1px solid $white;
+                a {
+                    position: relative;
+                    font-family: $mainFont;
+                    font-size: 20px;
+                    text-decoration: none;
+                    color: $white;
+                    margin: 0 35px;
+                    padding-bottom: 20px;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        transform: scaleX(0);
+                        height: 1px;
+                        bottom: 8px;
+                        left: 0;
+                        background-color: $white;
+                        transform-origin: bottom;
+                        transition: transform 0.3s ease-out;
                     }
-                    li:last-child {
-                        border: none;
+
+                    &:hover::after {
+                        transform: scaleX(1);
+                        transform-origin: bottom;
                     }
                 }
+            }
+            li:last-child {
+                border: none;
             }
         }
     }
