@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import banner from '../assets/img/sponsors/banner_sponsor.jpg';
+import banner from '../assets/img/banner_sponsor.jpg';
+import Footer from "./Footer";
+import Header from "./Header";
 
 const Sponsors = () => {
 
@@ -15,6 +17,7 @@ const Sponsors = () => {
 
     return(
         <>
+            <Header/>
             <section className="banner ">
                 <img src={banner} alt="" />
             </section>
@@ -38,6 +41,7 @@ const Sponsors = () => {
                         }
                 </div>
             </section>
+            <Footer/>
         </>
 
     );

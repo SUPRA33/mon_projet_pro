@@ -1,7 +1,7 @@
 section.intro {
     display: flex;
     justify-content: center;
-    margin-bottom: 5em;
+    margin: 3em 0 5em 0;
 
     div.containerIntro {
         display: flex;
@@ -14,21 +14,6 @@ section.intro {
             margin: 0 2em;
             display: flex;
             flex-direction: column;
-
-            h1 {
-                position: relative;
-                margin-bottom: 0.9em;
-                
-                &::after {
-                    content: '';
-                    position: absolute;
-                    width: 30%;
-                    height: 5px;
-                    top: 3.4em;
-                    left: 0;
-                    background-color: $grey;
-                }
-            }
 
             img {
                 width: 10em;

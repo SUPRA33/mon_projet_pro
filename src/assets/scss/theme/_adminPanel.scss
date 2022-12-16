@@ -1,0 +1,85 @@
+section.adminPanel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2.5em;
+
+    h2 {
+        color: $red;
+
+        &::after {
+            background-color: $red;
+        }
+    }
+
+    div.container {
+        display: flex;
+        min-width: 45%;
+        border: 1px solid rgba(50, 50, 93, 0.5);
+        padding: 2em;
+        margin-bottom: 4em;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+        div.buttons {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid rgba(50, 50, 93, 0.5);
+
+            button {
+                font-family: $mainFont;
+                font-size: 1em;
+                width: 80%;
+                margin-bottom: 2em;
+                padding: 0.5em 0;
+            }
+
+            :last-child {
+                margin: 4em 0 2em 0;
+                margin-bottom: 0;
+            }
+        }
+
+// -------- ADD TEAM ---------
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+
+            div.item {
+                margin-bottom: 1.5em;;
+                display: flex;
+                label {
+                    font-family: $mainFont;
+                    font-size: 1.1em;
+                    margin-right: 1.5em;
+                    width: 50%;
+                    display: block;
+                    text-align: end;
+                }
+    
+                input, select {
+                    font-family: $lightFont;
+                    font-size: 1.1em;
+                    width: 50%;
+                    display: block;
+                }
+
+                textarea {
+                    resize: none;
+                    font-style: $mainFont;
+                }
+            }
+            div.submit {
+                display: block;
+                text-align: center;
+                input {
+                font-family: $mainFont;
+                font-size: 1em;
+                padding: 0.5em 2em;
+                }
+            }
+        }
+    }
+}
