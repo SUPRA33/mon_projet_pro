@@ -11,7 +11,7 @@ const Header = () => {
                 </div>
                 <ul>
                     <li className="btn"><Link to='/'>ACCUEIL</Link></li>
-                    <li className="btn"><Link to='/teams'>EQUIPE</Link></li>
+                    <li className="btn"><Link to='/roster'>EQUIPE</Link></li>
                     <li className="btn"><Link to='/shop'>BOUTIQUE</Link></li>
                     <li className="btn"><Link to='/sponsors'>SPONSORS</Link></li>
                     <li className="btn"><Link to='/contact'>CONTACT</Link></li>

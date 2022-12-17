@@ -1,8 +1,10 @@
 import banner from '../assets/img/banner_accueil.png';
 import lanImg from '../assets/img/lan.jpg';
+import Footer from './Footer';
 import Header from './Header';
+import ResultList from './ResultList';
 
-const Accueil = () => {
+const Home = () => {
     return(
         <>
             <Header/>
@@ -20,27 +22,22 @@ const Accueil = () => {
                             <p>
                             Bienvenue sur le site de la <strong>SUPRA ESPORT</strong>, une
                             équipe Esport Française, fondée sous loi 1901 par Romain BERTAUD
-                            fin octobre 2020. Basé sur Valorant, nous nous efforçons de
+                            fin octobre 2020. Basée sur Valorant, nous nous efforçons de
                             construire une équipe la plus performante possible. Nous
-                            participons à différents événement (tournois, LAN…) accompagné de
+                            participons à différents événements (tournois, LAN…) accompagnés de
                             notre STAFF et à l'aide de nos partenaires uniques qui nous
                             démarquent de la concurrence. Pour le futur, nous voulons être un
                             acteur majeur dans le développement de l'Esport sur le territoire,
-                            inculquer nos valeurs et former nos athlètes esportif dés demain.
+                            inculquer nos valeurs et former nos athlètes esportifs dés demain.
                             </p>
                         </div>
                     </div>
                 </section>
-                <section className="results">
-                    <div className="containerResults">
-                        <div className="titleResult">
-                            <h2>Nos résultats</h2>
-                        </div>
-                    </div>
-                </section>
+                <ResultList/>
             </main>
+            <Footer/>
         </>
     );
 };
 
-export default Accueil;
+export default Home;

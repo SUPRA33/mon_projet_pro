@@ -26,25 +26,3 @@ section.intro {
         }
     }
 }
-section.results {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 4em;
-
-    div.containerResults {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        .titleResult {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            img {
-                width: 10em;
-                margin: 1.5em 0;
-            }
-        }
-    }
-}

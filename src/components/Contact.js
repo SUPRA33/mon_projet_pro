@@ -40,7 +40,7 @@ const Contact = () => {
                                     <input type="text" id="firstname" name="firstname"/>
                                 </div>
                                 <div className="content">
-                                    <label htmlFor="number">Téléphone*</label>
+                                    <label htmlFor="number">Téléphone</label>
                                     <input type="tel" id="number" name="number"/>
                                 </div>
                             </div>
