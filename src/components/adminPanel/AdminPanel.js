@@ -11,9 +11,9 @@ const AdminPanel = () => {
 
     const jwtLocalStorage = localStorage.getItem('jwt');
 
-    if (jwtLocalStorage) {
-        Next();
-    }
+    // if (jwtLocalStorage) {
+    //     Next();
+    // }
 
     const [panelToDisplay, setPanelToDisplay] = useState(null);
 

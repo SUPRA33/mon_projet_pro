@@ -1,41 +1,53 @@
-import { useEffect, useState } from "react";
-import Sponsors from "../Sponsors";
+const AddShopItem = () => {
 
-const AddproductsItem = () => {
+    const handleSubmit = (event) => {
+        event.preventDefault();
 
-    const [products, setProducts] = useState([]);
+        const productName = event.target.product_name.value;
+        const category = event.target.categorySelectOption.value;
+        const price = event.target.price.value;
+        const image = event.target.image.value;
 
-    useEffect(() => {
-        (async() => {
-            const getProductsData = await fetch("http://localhost/api/products");
-            const productsData = await getProductsData.json();
-            setProducts(productsData);
-        })();
-    },[]);
+        const jwtLocalStorage = localStorage.getItem('jwt');
+        const token = JSON.parse(jwtLocalStorage).access_token;
+
+        fetch('http://localhost/api/products', {
+            authorization: 'Bearer'+ ' ' + token,
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                productName,
+                category,
+                price,
+                image
+            })
+        });
 
     return(
         <>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className="item">
                     <label htmlFor="product_name">Nom produit* :</label>
-                    <input type="text" id="product_name" name="product_name"/>
+                    <input type="text" name="product_name"/>
                 </div>
 
                 <div className="item">
-                    <label htmlFor="categorySelectOption">Catégorie* :</label>
-                    <select name="category" id="category">
-                        <option>Vétements</option>
+                    <label htmlFor="category">Catégorie* :</label>
+                    <select name="categorySelectOption">
+                        <option>Vêtements</option>
                         <option>Accessoires</option>
                     </select>
                 </div>
 
                 <div className="item">
                     <label htmlFor="price">Prix :</label>
-                    <input type="float" id="price" name="price"/>
+                    <input type="float" name="price"/>
                 </div>
                 <div className="item">
                     <label htmlFor="image">Image produit :</label>
-                    <input type="text" id="image" name="image" placeholder="exemple : tshirt.jpg" />
+                    <input type="text" name="image" placeholder="exemple : tshirt.jpg" />
                 </div>
                 <div className="submit">
                     <input type="submit" value="Valider" />
@@ -45,4 +57,4 @@ const AddproductsItem = () => {
     );
 }
 
-export default AddproductsItem;
+export default AddShopItem;

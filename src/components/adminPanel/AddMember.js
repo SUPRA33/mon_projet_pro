@@ -19,13 +19,65 @@ const AddMember = () => {
         
         setCategory(category)
     }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        const civility = event.target.civility.value;
+        const lastName = event.target.last_name.value;
+        const firsName = event.target.first_name.value;
+        const nickname = event.target.nickname.value;
+        const nationality = event.target.nationality.value;
+        const dateBirth = event.target.date_birth.value;
+        const cityBirth = event.target.city_birth.value;
+        const email = event.target.email.value;
+        const adress_1 = event.target.adress_1.value;
+        const adress_2 = event.target.adress_2.value;
+        const city = event.target.city.value;
+        const postalCode = event.target.postal_code.value;
+        const country = event.target.country.value;
+        const image = event.target.image.value;
+        const team = event.target.teamSelectOption.value;
+        const category = event.target.categorySelectOption.value;
+        const role = event.target.roleSelectOption.value;
+
+        const jwtLocalStorage = localStorage.getItem('jwt');
+        const token = JSON.parse(jwtLocalStorage).access_token;
+
+        fetch('http://localhost/api/teams', {
+            authorization: 'Bearer'+ ' ' + token,
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                civility,
+                lastName,
+                firsName,
+                nickname,
+                nationality,
+                dateBirth,
+                cityBirth,
+                email,
+                adress_1,
+                adress_2,
+                city,
+                postalCode,
+                country,
+                image,
+                team,
+                category,
+                role
+            })
+        });
+    }
     
     return(
         <>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className="item">
-                    <label htmlFor="civilitySelectOption">Catégorie* :</label>
-                    <select name="civility" id="civility">
+                    <label htmlFor="civilitySelectOption">Civilité* :</label>
+                    <select name="civility">
                         <option>Monsieur</option>
                         <option>Madame</option>
                     </select>

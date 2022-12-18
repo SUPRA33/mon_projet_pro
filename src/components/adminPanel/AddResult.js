@@ -12,9 +12,38 @@ const AddResult = () => {
         })();
     },[]);
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        const date = event.target.date.value;
+        const score_home = event.target.score_home.value;
+        const score_ext = event.target.score_ext.value;
+        const teamHome = event.target.teamHomeSelectOption.value;
+        const teamExt = event.target.teamExtSelectOption.value;
+
+        const jwtLocalStorage = localStorage.getItem('jwt');
+        const token = JSON.parse(jwtLocalStorage).access_token;
+
+        fetch('http://localhost/api/results', {
+            authorization: 'Bearer'+ ' ' + token,
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                date,
+                score_home,
+                score_ext,
+                teamHome,
+                teamExt
+            })
+        });
+        
+    }
+
     return(
         <>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className="item">
                     <label htmlFor="date">Date du match* :</label>
                     <input type="date" name="date" />
@@ -31,8 +60,8 @@ const AddResult = () => {
                 </div>
 
                 <div className="item">
-                    <label htmlFor="teamHomeSelectOption">Equipe domicile* :</label>
-                    <select name="team_home">
+                    <label htmlFor="team_home">Equipe domicile* :</label>
+                    <select name="teamHomeSelectOption">
                         {teams.map((team) => {
                             return (
                                 <option value={team.id}>{team.team_name}</option>
@@ -41,8 +70,8 @@ const AddResult = () => {
                     </select>
                 </div>
                 <div className="item">
-                <label htmlFor="teamExtSelectOption">Equipe extérieur* :</label>
-                    <select name="team_ext">
+                <label htmlFor="team_ext">Equipe extérieur* :</label>
+                    <select name="teamExtSelectOption">
                         {teams.map((team) => {
                             return (
                                 <option value={team.id}>{team.team_name}</option>

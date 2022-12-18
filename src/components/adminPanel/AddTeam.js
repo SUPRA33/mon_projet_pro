@@ -12,9 +12,31 @@ const AddTeam = () => {
         })();
     },[]);
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        const name = event.target.team_name.value;
+        const logo = event.target.logo.value;
+
+        const jwtLocalStorage = localStorage.getItem('jwt');
+        const token = JSON.parse(jwtLocalStorage).access_token;
+
+        fetch('http://localhost/api/teams', {
+            authorization: 'Bearer'+ ' ' + token,
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name,
+                logo
+            })
+        });
+    }
+
     return(
         <>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className="item">
                     <label htmlFor="team_name">Nom d'équipe :</label>
                     <input type="text" name="team_name" />
