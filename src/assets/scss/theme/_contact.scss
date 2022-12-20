@@ -21,7 +21,6 @@ main {
                 color: $grey;
                 text-align: center;
                 background-color: $lightGrey;
-                margin-bottom: 1.5em;
                 padding: 0 2em;
                 border-radius: 1em;
                 width: 100%;
@@ -42,6 +41,7 @@ main {
                         display: flex;
                         flex-direction: column;
                         align-items: center;
+                        margin-top: 1.5em;
     
                         select {
                             width: 130%;
@@ -58,6 +58,7 @@ main {
                 flex-direction: column;
                 align-items: center;
                 width: 100%;
+                margin-top: 1.5em;
     
                 textarea {
                     text-align: left;
@@ -79,6 +80,7 @@ main {
                 padding: 0.7em 2.5em;
                 transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
                 cursor: pointer;
+                margin: 1.5em 0;
               
                   &:hover {
                     box-shadow: rgba(0, 0, 0, 0.5) 0px 8px 15px, rgba(0, 0, 0, 0.22) 0px 6px 13px;
@@ -86,7 +88,13 @@ main {
                   &:active {
                     box-shadow: rgba(0, 0, 0, 0.5) 3px 3px 10px inset;
                   }
-              }
+            }
+            label.error {
+                text-transform: none;
+                font-family: $lightFont;
+                text-align: center;
+                color: $red;
+            }
         }
     }
     
