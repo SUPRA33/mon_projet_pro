@@ -3,27 +3,28 @@ const AddShopItem = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        const productName = event.target.product_name.value;
+        const product_name = event.target.product_name.value;
         const category = event.target.categorySelectOption.value;
         const price = event.target.price.value;
-        const image = event.target.image.value;
+        const product_image = event.target.product_image.value;
 
         const jwtLocalStorage = localStorage.getItem('jwt');
         const token = JSON.parse(jwtLocalStorage).access_token;
 
         fetch('http://localhost/api/products', {
-            authorization: 'Bearer'+ ' ' + token,
             method: 'PUT',
             headers: {
+                authorization: 'Bearer ' + token,
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                productName,
+                product_name,
                 category,
                 price,
-                image
+                product_image
             })
         });
+    }
 
     return(
         <>
@@ -46,8 +47,8 @@ const AddShopItem = () => {
                     <input type="float" name="price"/>
                 </div>
                 <div className="item">
-                    <label htmlFor="image">Image produit :</label>
-                    <input type="text" name="image" placeholder="exemple : tshirt.jpg" />
+                    <label htmlFor="product_image">Image produit :</label>
+                    <input type="text" name="product_image" placeholder="exemple : tshirt.jpg" />
                 </div>
                 <div className="submit">
                     <input type="submit" value="Valider" />

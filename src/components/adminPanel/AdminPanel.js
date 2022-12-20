@@ -11,10 +11,6 @@ const AdminPanel = () => {
 
     const jwtLocalStorage = localStorage.getItem('jwt');
 
-    // if (jwtLocalStorage) {
-    //     Next();
-    // }
-
     const [panelToDisplay, setPanelToDisplay] = useState(null);
 
     const handlePanelClick = (panel) => {
@@ -37,8 +33,6 @@ const AdminPanel = () => {
         else if (panelToDisplay === 'shopItem') {
             return <AddShopItem/>
         }
-        else if (panelToDisplay === 'admin') {
-        }
     };
 
     const navigate = useNavigate();
@@ -60,7 +54,6 @@ const AdminPanel = () => {
                         <button onClick={() => handlePanelClick('result')}>Ajouter un résultat</button>
                         <button onClick={() => handlePanelClick('sponsor')}>Ajouter un sponsor</button>
                         <button onClick={() => handlePanelClick('shopItem')}>Ajouter à la boutique</button>
-                        <button onClick={() => handlePanelClick('admin')}>Ajouter un admin</button>
                         <button onClick={() => logOut()}>Se déconnecter</button>
                     </div>
                     {renderPanel()}

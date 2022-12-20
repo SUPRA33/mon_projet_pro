@@ -27,10 +27,10 @@ const Roster = () => {
                     <div className="container">
                         <h3>STAFF</h3>
                         <div className="staff">
-                            {members.map((member) => {
+                            {members.map((member, index) => {
                                 return(
                                     member.category === "staff" &&
-                                        <div className="member">
+                                        <div className="member" key={index}>
                                             <h4>{member.role}</h4>
                                             <img src={`http://localhost/images/members/${member.image}`}/>
                                             <h4>{member.nickname}</h4>
@@ -40,10 +40,10 @@ const Roster = () => {
                         </div>
                         <h3>JOUEURS</h3>
                         <div className="players">
-                            {members.map((member) => {
+                            {members.map((member, index) => {
                                 return(
                                     member.category === "joueur" &&
-                                        <div className="member">
+                                        <div className="member" key={index}>
                                             <h4>{member.role}</h4>
                                             <img src={`http://localhost/images/members/${member.image}`}/>
                                             <h4>{member.nickname}</h4>

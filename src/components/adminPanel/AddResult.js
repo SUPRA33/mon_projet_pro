@@ -18,24 +18,24 @@ const AddResult = () => {
         const date = event.target.date.value;
         const score_home = event.target.score_home.value;
         const score_ext = event.target.score_ext.value;
-        const teamHome = event.target.teamHomeSelectOption.value;
-        const teamExt = event.target.teamExtSelectOption.value;
+        const team_home_id = event.target.teamHomeSelectOption.value;
+        const team_ext_id = event.target.teamExtSelectOption.value;
 
         const jwtLocalStorage = localStorage.getItem('jwt');
         const token = JSON.parse(jwtLocalStorage).access_token;
 
         fetch('http://localhost/api/results', {
-            authorization: 'Bearer'+ ' ' + token,
             method: 'PUT',
             headers: {
+                authorization: 'Bearer ' + token,
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 date,
                 score_home,
                 score_ext,
-                teamHome,
-                teamExt
+                team_home_id,
+                team_ext_id
             })
         });
         

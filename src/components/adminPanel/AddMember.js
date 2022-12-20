@@ -23,49 +23,49 @@ const AddMember = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        const civility = event.target.civility.value;
-        const lastName = event.target.last_name.value;
-        const firsName = event.target.first_name.value;
+        const civility = event.target.civilitySelectOption.value;
+        const last_name = event.target.last_name.value;
+        const first_name = event.target.first_name.value;
         const nickname = event.target.nickname.value;
         const nationality = event.target.nationality.value;
-        const dateBirth = event.target.date_birth.value;
-        const cityBirth = event.target.city_birth.value;
+        const date_birth = event.target.date_birth.value;
+        const city_birth = event.target.city_birth.value;
         const email = event.target.email.value;
         const adress_1 = event.target.adress_1.value;
         const adress_2 = event.target.adress_2.value;
         const city = event.target.city.value;
-        const postalCode = event.target.postal_code.value;
+        const postal_code = event.target.postal_code.value;
         const country = event.target.country.value;
         const image = event.target.image.value;
-        const team = event.target.teamSelectOption.value;
+        const team_id = event.target.teamSelectOption.value;
         const category = event.target.categorySelectOption.value;
         const role = event.target.roleSelectOption.value;
 
         const jwtLocalStorage = localStorage.getItem('jwt');
         const token = JSON.parse(jwtLocalStorage).access_token;
 
-        fetch('http://localhost/api/teams', {
-            authorization: 'Bearer'+ ' ' + token,
+        fetch('http://localhost/api/members', {
             method: 'PUT',
             headers: {
+                authorization: 'Bearer ' + token,
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 civility,
-                lastName,
-                firsName,
+                last_name,
+                first_name,
                 nickname,
                 nationality,
-                dateBirth,
-                cityBirth,
+                date_birth,
+                city_birth,
                 email,
                 adress_1,
                 adress_2,
                 city,
-                postalCode,
+                postal_code,
                 country,
                 image,
-                team,
+                team_id,
                 category,
                 role
             })
@@ -76,8 +76,8 @@ const AddMember = () => {
         <>
             <form onSubmit={handleSubmit}>
                 <div className="item">
-                    <label htmlFor="civilitySelectOption">Civilité* :</label>
-                    <select name="civility">
+                    <label htmlFor="civility">Civilité* :</label>
+                    <select name="civilitySelectOption">
                         <option>Monsieur</option>
                         <option>Madame</option>
                     </select>

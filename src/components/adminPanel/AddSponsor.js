@@ -4,7 +4,7 @@ const AddSponsor = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        const name = event.target.sponsor_name.value;
+        const sponsor_name = event.target.sponsor_name.value;
         const description = event.target.description.value;
         const link = event.target.link.value;
         const logo = event.target.logo.value;
@@ -13,13 +13,13 @@ const AddSponsor = () => {
         const token = JSON.parse(jwtLocalStorage).access_token;
 
         fetch('http://localhost/api/sponsors', {
-            authorization: 'Bearer'+ ' ' + token,
             method: 'PUT',
             headers: {
+                authorization: 'Bearer ' + token,
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                name,
+                sponsor_name,
                 description,
                 link,
                 logo

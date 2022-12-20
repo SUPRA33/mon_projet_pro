@@ -12,23 +12,23 @@ const AddTeam = () => {
         })();
     },[]);
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
-        const name = event.target.team_name.value;
+        const team_name = event.target.team_name.value;
         const logo = event.target.logo.value;
 
         const jwtLocalStorage = localStorage.getItem('jwt');
         const token = JSON.parse(jwtLocalStorage).access_token;
 
-        fetch('http://localhost/api/teams', {
-            authorization: 'Bearer'+ ' ' + token,
+       await fetch('http://localhost/api/teams', {
             method: 'PUT',
             headers: {
+                authorization: 'Bearer ' + token,
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                name,
+                team_name,
                 logo
             })
         });
