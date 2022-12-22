@@ -1,16 +1,4 @@
-import { useEffect, useState } from "react";
-
 const AddTeam = () => {
-
-    const [teams, setTeams] = useState([]);
-
-    useEffect(() => {
-        (async() => {
-            const getTeamsData = await fetch("http://localhost/api/teams");
-            const teamsData = await getTeamsData.json();
-            setTeams(teamsData);
-        })();
-    },[]);
 
     const handleSubmit = async (event) => {
         event.preventDefault();

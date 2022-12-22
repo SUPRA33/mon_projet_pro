@@ -5,11 +5,8 @@ import AddResult from "./AddResult";
 import AddSponsor from "./AddSponsor";
 import AddShopItem from "./AddShopItem";
 import { useNavigate } from "react-router-dom";
-import { Next } from "react-bootstrap/esm/PageItem";
 
 const AdminPanel = () => {
-
-    const jwtLocalStorage = localStorage.getItem('jwt');
 
     const [panelToDisplay, setPanelToDisplay] = useState(null);
 

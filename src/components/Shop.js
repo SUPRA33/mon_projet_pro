@@ -20,7 +20,7 @@ const Shop = () => {
             <Header/>
             <main>
                 <section className="banner">
-                        <img src={banner} alt="bannière de boutique'"/>
+                    <img src={banner} alt="bannière de boutique'"/>
                 </section>
                 <section className="shop">
                     <h2>NOTRE BOUTIQUE</h2>
@@ -33,7 +33,7 @@ const Shop = () => {
                                 return(
                                     product.category === "vetements" &&
                                         <div className="item">
-                                            <img src={`http://localhost/images/products/${product.product_image}`}/>
+                                            <img src={`http://localhost/images/products/${product.product_image}`} alt="article"/>
                                             <div className="productInfo">
                                                 <h4>{product.product_name}</h4>
                                                 <h4>{product.price} &#8364;</h4>
@@ -48,7 +48,7 @@ const Shop = () => {
                                 return(
                                     product.category === "accessoires" &&
                                         <div className="item">
-                                            <img src={`http://localhost/images/products/${product.product_image}`}/>
+                                            <img src={`http://localhost/images/products/${product.product_image}`} alt="article"/>
                                             <div className="productInfo">
                                                 <h4>{product.product_name}</h4>
                                                 <h4>{product.price} &#8364;</h4>

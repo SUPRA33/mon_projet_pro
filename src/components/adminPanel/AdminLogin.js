@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import AddSponsor from "./AddSponsor";
 
 const AdminLogin = () => {
 

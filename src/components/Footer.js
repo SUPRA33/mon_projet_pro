@@ -12,8 +12,8 @@ const Footer = () => {
                 <div className="socials">
                     <span>FOLLOW US</span>
                     <div className="links">
-                        <a href="https://twitter.com/"><img src={fcb} alt="lien twitter"/></a>
-                        <a href="https://www.facebook.com/"><img src={twitter} alt="lien facebook"/></a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><img src={fcb} alt="lien twitter"/></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><img src={twitter} alt="lien facebook"/></a>
                     </div>
                 </div>
                 <div className="copyright">

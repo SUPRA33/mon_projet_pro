@@ -4,7 +4,7 @@ const AddMember = () => {
 
     const [teams, setTeams] = useState([]);
 
-    const [category, setCategory] = useState(null)
+    const [category, setCategory] = useState(null);
 
     useEffect(() => {
         (async() => {
@@ -14,32 +14,33 @@ const AddMember = () => {
         })();
     },[]);
 
-    const handleCategoryChange = (event) => {
-        const category = event.target.value;
+    const handleCategoryChange = (e) => {
+        e.preventDefault();
+        const category = e.target.value;
         
-        setCategory(category)
+        setCategory(category);
     }
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    const handleSubmit = (e) => {
+        e.preventDefault();
 
-        const civility = event.target.civilitySelectOption.value;
-        const last_name = event.target.last_name.value;
-        const first_name = event.target.first_name.value;
-        const nickname = event.target.nickname.value;
-        const nationality = event.target.nationality.value;
-        const date_birth = event.target.date_birth.value;
-        const city_birth = event.target.city_birth.value;
-        const email = event.target.email.value;
-        const adress_1 = event.target.adress_1.value;
-        const adress_2 = event.target.adress_2.value;
-        const city = event.target.city.value;
-        const postal_code = event.target.postal_code.value;
-        const country = event.target.country.value;
-        const image = event.target.image.value;
-        const team_id = event.target.teamSelectOption.value;
-        const category = event.target.categorySelectOption.value;
-        const role = event.target.roleSelectOption.value;
+        const civility = e.target.civilitySelectOption.value;
+        const last_name = e.target.last_name.value;
+        const first_name = e.target.first_name.value;
+        const nickname = e.target.nickname.value;
+        const nationality = e.target.nationality.value;
+        const date_birth = e.target.date_birth.value;
+        const city_birth = e.target.city_birth.value;
+        const email = e.target.email.value;
+        const adress_1 = e.target.adress_1.value;
+        const adress_2 = e.target.adress_2.value;
+        const city = e.target.city.value;
+        const postal_code = e.target.postal_code.value;
+        const country = e.target.country.value;
+        const image = e.target.image.value;
+        const team_id = e.target.teamSelectOption.value;
+        const category = e.target.categorySelectOption.value;
+        const role = e.target.roleSelectOption.value;
 
         const jwtLocalStorage = localStorage.getItem('jwt');
         const token = JSON.parse(jwtLocalStorage).access_token;
@@ -154,7 +155,7 @@ const AddMember = () => {
                 <div className="item">
                     <label htmlFor="role">Role* :</label>
                     <select name="roleSelectOption">
-                        {!category || category === "joueurs" ? (
+                        {!category || category === "joueur" ? (
                             <>
                                 <option value="joueur">Joueur</option>
                                 <option value="capitaine">Capitaine</option>

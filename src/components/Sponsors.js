@@ -29,12 +29,12 @@ const Sponsors = () => {
                                     return(
                                         <div className="sponsor">
                                             <div className="logo">
-                                                <img src={`http://localhost/images/sponsors/${sponsor.logo}`}/>
+                                                <img src={`http://localhost/images/sponsors/${sponsor.logo}`} alt="logo sponsor"/>
                                             </div>
                                             <div className="infos">
                                                 <h3>{sponsor.sponsor_name} :</h3>
                                                 <p>{sponsor.description}</p>
-                                                <a href={sponsor.link} target="_blank">{sponsor.link}</a>
+                                                <a href={sponsor.link} target="_blank" rel="noopener noreferrer">{sponsor.link}</a>
                                             </div>
                                         </div>
                                     );

@@ -32,7 +32,7 @@ const Roster = () => {
                                     member.category === "staff" &&
                                         <div className="member" key={index}>
                                             <h4>{member.role}</h4>
-                                            <img src={`http://localhost/images/members/${member.image}`}/>
+                                            <img src={`http://localhost/images/members/${member.image}`} alt="membre"/>
                                             <h4>{member.nickname}</h4>
                                         </div>
                                 );
@@ -45,7 +45,7 @@ const Roster = () => {
                                     member.category === "joueur" &&
                                         <div className="member" key={index}>
                                             <h4>{member.role}</h4>
-                                            <img src={`http://localhost/images/members/${member.image}`}/>
+                                            <img src={`http://localhost/images/members/${member.image}`} alt="membre"/>
                                             <h4>{member.nickname}</h4>
                                         </div>
                                 );

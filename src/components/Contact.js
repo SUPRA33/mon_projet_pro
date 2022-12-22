@@ -21,7 +21,7 @@ const Contact = () => {
         const message_object = e.target.message_object.value;
         const message = e.target.message_send.value;
 
-        if (firstName.length == 0 || lastName.length == 0 || email.length == 0 || message.length == 0) {
+        if (firstName.length === 0 || lastName.length === 0 || email.length === 0 || message.length === 0) {
             setError(true);
         }
         if (last_name && first_name && email && message) {
@@ -99,7 +99,7 @@ const Contact = () => {
                             <label className="error">Message ne peut être vide</label>:""}
                         </div>
                         <div>
-                            <button role="button">Envoyer</button>
+                            <button>Envoyer</button>
                         </div>
                     </form>
                 </section>
