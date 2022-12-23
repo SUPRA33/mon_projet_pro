@@ -23,7 +23,7 @@ const Roster = () => {
                     <img src={banner} alt="bannière d'équipe'"/>
                 </section>
                 <section className="roster">
-                    <h2>NOTRE ROSTER</h2>
+                    <h2><span>NOTRE</span> ROSTER</h2>
                     <div className="container">
                         <h3>STAFF</h3>
                         <div className="staff">

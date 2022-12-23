@@ -23,7 +23,7 @@ const Shop = () => {
                     <img src={banner} alt="bannière de boutique'"/>
                 </section>
                 <section className="shop">
-                    <h2>NOTRE BOUTIQUE</h2>
+                    <h2><span>NOTRE</span> BOUTIQUE</h2>
                     <p>Boutique en cours de développement.</p>
                     <p>Pour tout souhait d'achat, veuillez nous contacter via le formulaire de contact en spécifiant "boutique" dans l'objet.</p>
                     <div className="container">

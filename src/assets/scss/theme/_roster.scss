@@ -13,6 +13,7 @@ main {
 
             h3 {
                 text-decoration: none;
+                margin-top: 0em;
             }
 
             div.member {
@@ -42,7 +43,7 @@ main {
                 justify-content: space-evenly;
                 flex-wrap: wrap;
                 width: 70%;
-                margin-bottom: 3em;
+                margin-bottom: 6em;
 
                 &::after {
                     content: '';
@@ -67,3 +68,28 @@ main {
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    main {
+        section.roster {
+            span {
+                display: none;
+            }
+            div.container {
+                width: 100%;
+                div.staff {
+                    position: relative;
+                    display: flex;
+                    justify-content: space-evenly;
+                    flex-wrap: wrap;
+                    width: 70%;
+                    margin-bottom: 6em;
+    
+                    &::after {
+                        width: 120px;
+                    }
+                }
+            }
+        }
+    }
+}  

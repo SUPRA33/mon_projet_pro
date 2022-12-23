@@ -9,7 +9,6 @@ main {
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 80%;
             margin-top: 4em;
             max-width: 70%;
     
@@ -17,7 +16,6 @@ main {
                 display: flex;
                 justify-content: space-between;
                 margin-bottom: 6em;
-                width: 100%;
     
                 &:nth-of-type(2n) {
                     flex-direction: row-reverse;
@@ -35,6 +33,10 @@ main {
                     flex-direction: column;
                     width: 48%;
                     
+                    h3 {
+                        margin: 0 0 2em 0;
+                    }
+                    
                     p {
                         font-family: $mainFont;
                     }
@@ -45,12 +47,54 @@ main {
                         font-family: $mainFont;
                         font-style: italic;
                         color: $grey;
-                        margin: 0 2em 0 2em;
+                        margin: 1em 2em 0 2em;
                     }
     
                     
                 }
     
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        section.sponsors {
+            span {
+                display: none;
+            }
+            div.container {
+                margin: 0;
+                flex-direction: column;
+                div.sponsor {
+                    flex-direction: column;
+                    margin-bottom: 3em;
+
+                    &:nth-of-type(2n) {
+                        flex-direction: column;
+                    }
+                    
+                    div.logo {
+                        width: 100%;
+                    }
+                    div.infos {
+                        align-items: center;
+                        width: 100%;
+
+                        h3 {
+                            margin: 0.5em 0 1em 0;
+                        }
+
+                        p {
+                            text-align: center;
+                        }
+
+                        a {
+                            margin-top: 1em;
+                        }
+                    }
+                }
             }
         }
     }

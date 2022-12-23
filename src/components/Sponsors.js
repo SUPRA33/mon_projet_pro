@@ -23,7 +23,7 @@ const Sponsors = () => {
                     <img src={banner} alt="" />
                 </section>
                 <section className="sponsors">
-                    <h2>NOS SPONSORS</h2>
+                    <h2><span>NOS</span> SPONSORS</h2>
                     <div className="container">
                         {sponsors.map((sponsor) => {
                                     return(
@@ -32,7 +32,7 @@ const Sponsors = () => {
                                                 <img src={`http://localhost/images/sponsors/${sponsor.logo}`} alt="logo sponsor"/>
                                             </div>
                                             <div className="infos">
-                                                <h3>{sponsor.sponsor_name} :</h3>
+                                                <h3>{sponsor.sponsor_name} <span>:</span></h3>
                                                 <p>{sponsor.description}</p>
                                                 <a href={sponsor.link} target="_blank" rel="noopener noreferrer">{sponsor.link}</a>
                                             </div>

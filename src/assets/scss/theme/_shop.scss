@@ -15,7 +15,6 @@ main {
             color: $red;
             font-size: 1.3em;
             text-decoration: underline;
-            margin: 0 1em;
         }
         
         div.container {
@@ -28,6 +27,7 @@ main {
                 margin: 0 1em 2em 1em;
                 img {
                     z-index: 0;
+                    max-width: 300px;
                     transform: scale(1);
                     transition: transform 0.1s;
                     cursor: pointer;
@@ -62,5 +62,26 @@ main {
             }
         }
         
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        section.shop {
+            h2 {
+                span {
+                    display: none;
+                }
+            }
+            div.container {
+                width: 100%;
+                div.clothes {
+                    margin-bottom: 0;
+                }
+                div.item {
+                    margin: 0 0 0.5em 0;
+                }
+            }
+        }
     }
 }
