@@ -12,40 +12,53 @@ main {
             font-family: $mainFont;
             color: $red;
             text-transform: uppercase;
-            width: 600px;
             margin-top: 4em;
+            width: 600px;
     
-            input,textarea, select {
+            input,textarea {
                 font-family: $lightFont;
                 font-size: 1em;
                 color: $grey;
                 text-align: center;
                 background-color: $lightGrey;
-                padding: 0 2em;
                 border-radius: 1em;
-                width: 100%;
+                width: 230px;
                 height: 2.5em;
-                border: 0;
+                padding: 0 2em;
+                border: none;
             }
     
             div.infoContainer {
                 display: flex;
-                justify-content: space-between;
+                flex-direction: column;
                 width: 100%;
     
                 div.info {
                     display: flex;
-                    flex-direction: column;
+                    justify-content: space-between;
+
+                    &:last-child {
+                    }
     
                     div.content {
                         display: flex;
                         flex-direction: column;
                         align-items: center;
-                        margin-top: 1.5em;
+                        margin-bottom: 1.5em;
+                        width: 40%;
     
                         select {
-                            width: 130%;
-    
+                            display: initial;
+                            font-family: $lightFont;
+                            font-size: 1em;
+                            text-align: center;
+                            background-color: $lightGrey;
+                            border-radius: 1em;
+                            height: 2.5em;
+                            border: none;
+                            width: 300px;
+
+
                             #chooseObject {
                                 display: none;
                             }
@@ -57,14 +70,13 @@ main {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                width: 100%;
-                margin-top: 1.5em;
     
                 textarea {
                     text-align: left;
                     padding: 0.8em 2em;
                     resize: none;
-                    height: 80%;
+                    height: 30%;
+                    width: 100%;
                 }
             }
     
@@ -97,6 +109,31 @@ main {
             }
         }
     }
-    
-    
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        section.contact {
+            span {
+                display: none;
+            }
+            form {
+                margin-top: 0;
+                div.infoContainer {
+                    div.info {
+                        flex-direction: column;
+                        align-items: center;
+                        div.content {
+                            width: 250px;
+                        }
+                    }
+                }
+                div.message {
+                    textarea {
+                        width: 250px;
+                    }
+                }
+            }
+        }
+    }
 }

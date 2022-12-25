@@ -52,7 +52,7 @@ const Contact = () => {
                     <img src={banner} alt="bannière de contact"/>
                 </section>
                 <section className="contact">
-                    <h2>CONTACTEZ NOUS</h2>
+                    <h2>CONTACT<span>EZ NOUS</span></h2>
                     <form onSubmit={handleSubmit}>
                         <div className="infoContainer">
                             <div className="info">
@@ -63,11 +63,27 @@ const Contact = () => {
                                     <label className="error">Nom ne peut être vide</label>:""}
                                 </div>
                                 <div className="content">
+                                    <label htmlFor="first_name">Prénom*</label>
+                                    <input type="text" name="first_name" placeholder="Prénom" onChange={e=>setFirstName(e.target.value)}/>
+                                    {error && firstName.length <= 0  ?
+                                    <label className="error">Prénom ne peut être vide</label>:""}
+                                </div>
+                            </div>
+
+                            <div className="info">
+                                <div className="content">
                                     <label htmlFor="email">Email*</label>
                                     <input type="email" name="email" placeholder="utilisateur@gmail.com" onChange={e=>setEmail(e.target.value)}/>
                                     {error && email.length <= 0  ?
                                     <label className="error">Email ne peut être vide</label>:""}
                                 </div>
+                                <div className="content">
+                                    <label htmlFor="phone">Téléphone</label>
+                                    <input type="tel" name="phone" placeholder="06372869XX"/>
+                                </div>
+                            </div>
+
+                            <div className="info">
                                 <div className="content">
                                     <label htmlFor="object">Objet*</label>
                                     <select name="message_object">
@@ -77,18 +93,6 @@ const Contact = () => {
                                         <option>Sponsor</option>
                                         <option>Autres</option>
                                     </select>
-                                </div>
-                            </div>
-                            <div className="info">
-                                <div className="content">
-                                    <label htmlFor="first_name">Prénom*</label>
-                                    <input type="text" name="first_name" placeholder="Prénom" onChange={e=>setFirstName(e.target.value)}/>
-                                    {error && firstName.length <= 0  ?
-                                    <label className="error">Prénom ne peut être vide</label>:""}
-                                </div>
-                                <div className="content">
-                                    <label htmlFor="phone">Téléphone</label>
-                                    <input type="tel" name="phone" placeholder="06372869XX"/>
                                 </div>
                             </div>
                         </div>
