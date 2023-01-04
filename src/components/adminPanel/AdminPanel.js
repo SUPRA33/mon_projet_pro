@@ -5,13 +5,15 @@ import AddResult from "./AddResult";
 import AddSponsor from "./AddSponsor";
 import AddShopItem from "./AddShopItem";
 import { useNavigate } from "react-router-dom";
+import logo from '../../assets/img/supra_white.png';
 
 const AdminPanel = () => {
 
     const [panelToDisplay, setPanelToDisplay] = useState(null);
 
     const handlePanelClick = (panel) => {
-        setPanelToDisplay(panel)
+        setPanelToDisplay(panel);
+        handleDisplayLinks();
     };
 
     const renderPanel = () => {
@@ -39,24 +41,62 @@ const AdminPanel = () => {
         navigate('/admin');
     };
 
+    const [displayLinks, setDisplayLinks] = useState(false);
+
+    const handleDisplayLinks = () => {
+        setDisplayLinks(!displayLinks)
+    }
 
     return(
-        <main>
-            <section className="adminPanel">
-                <h2>PANEL D'ADMINISTRATION</h2>
-                <div className="container">
-                    <div className="buttons">
-                        <button onClick={() => handlePanelClick('team')}>Ajouter une équipe</button>
-                        <button onClick={() => handlePanelClick('member')}>Ajouter un membre</button>
-                        <button onClick={() => handlePanelClick('result')}>Ajouter un résultat</button>
-                        <button onClick={() => handlePanelClick('sponsor')}>Ajouter un sponsor</button>
-                        <button onClick={() => handlePanelClick('shopItem')}>Ajouter à la boutique</button>
-                        <button onClick={() => logOut()}>Se déconnecter</button>
-                    </div>
-                    {renderPanel()}
+        <>
+            <header id="adminHeader">
+                <nav className="navbar">
+                <div className="logo">
+                    <img src={logo} alt="logo supra" />
                 </div>
-            </section>
-        </main>
+                    <ul className={`navbar_links ${displayLinks ? "" : "hide_nav"}`}>
+                        <li>
+                            <a onClick={() => handlePanelClick('team')}>Ajouter une équipe</a>
+                        </li>
+                        <li>
+                            <a onClick={() => handlePanelClick('member')}>Ajouter un membre</a>
+                        </li>
+                        <li>
+                            <a onClick={() => handlePanelClick('result')}>Ajouter un résultat</a>
+                        </li>
+                        <li>
+                            <a onClick={() => handlePanelClick('sponsor')}>Ajouter un sponsor</a>
+                        </li>
+                        <li>
+                            <a onClick={() => handlePanelClick('shopItem')}>Ajouter à la boutique</a>
+                        </li>
+                        <li>
+                            <a onClick={() => logOut()}>Se déconnecter</a>
+                        </li>
+                    </ul>
+                    <div className="logo"></div>
+                    <button className="burger" onClick={handleDisplayLinks}>
+                        <i className="fa-solid fa-bars fa-3x"></i>
+                    </button>
+                </nav>
+            </header>
+            <main>
+                <section className="adminPanel">
+                    <h2><span>PANEL D'</span>ADMINISTRATION</h2>
+                    <div className="container">
+                        <div className="buttons">
+                            <button onClick={() => handlePanelClick('team')}>Ajouter une équipe</button>
+                            <button onClick={() => handlePanelClick('member')}>Ajouter un membre</button>
+                            <button onClick={() => handlePanelClick('result')}>Ajouter un résultat</button>
+                            <button onClick={() => handlePanelClick('sponsor')}>Ajouter un sponsor</button>
+                            <button onClick={() => handlePanelClick('shopItem')}>Ajouter à la boutique</button>
+                            <button onClick={() => logOut()}>Se déconnecter</button>
+                        </div>
+                        {renderPanel()}
+                    </div>
+                </section>
+            </main>
+        </>
     );
 }
 

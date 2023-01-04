@@ -24,6 +24,7 @@ const AddShopItem = () => {
                 product_image
             })
         });
+        alert("Opération réussie avec succès.");
     }
 
     return(

@@ -38,7 +38,7 @@ const AddResult = () => {
                 team_ext_id
             })
         });
-        
+        alert("Opération réussie avec succès.");
     }
 
     return(

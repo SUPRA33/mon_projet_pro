@@ -2,10 +2,11 @@ section.adminPanel {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 2.5em;
 
     h2 {
         color: $red;
+        text-align: center;
+        margin-top: 2em;
 
         &::after {
             background-color: $red;
@@ -14,11 +15,15 @@ section.adminPanel {
 
     div.container {
         display: flex;
-        min-width: 45%;
+        width: 600px;
         border: 1px solid rgba(50, 50, 93, 0.5);
         padding: 2em;
-        margin-bottom: 4em;
+        margin-bottom: 0;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+        h3 {
+            margin-top: 0;
+        }
 
         div.buttons {
             width: 30%;
@@ -39,8 +44,6 @@ section.adminPanel {
                 margin-bottom: 0;
             }
         }
-
-// -------- ADD TEAM ---------
 
         form {
             display: flex;
@@ -74,11 +77,55 @@ section.adminPanel {
             div.submit {
                 display: block;
                 text-align: center;
+
                 input {
                 font-family: $mainFont;
                 font-size: 1em;
                 padding: 0.5em 2em;
                 }
+            }
+        }
+    }
+}
+
+header#adminHeader {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+
+header#adminHeader {
+    display: block;
+    a {
+        cursor: pointer;
+    }
+}
+
+    section.adminPanel {
+        span {
+            display: none;
+        }
+        div.container {
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+
+            form {
+                align-items: center;
+                div.item {
+                    flex-direction: column;
+                    align-items: center;
+                    width: 250px;
+    
+                    label,input,select {
+                        margin: 0;
+                        text-align: left;
+                        width: 100%;
+                    }
+                }
+            }
+            div.buttons {
+                display: none;
             }
         }
     }

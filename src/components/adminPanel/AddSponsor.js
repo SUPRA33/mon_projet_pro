@@ -25,7 +25,7 @@ const AddSponsor = () => {
                 logo
             })
         });
-        
+        alert("Opération réussie avec succès.");
     }
 
     return(

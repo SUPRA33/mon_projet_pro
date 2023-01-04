@@ -20,6 +20,7 @@ const AddTeam = () => {
                 logo
             })
         });
+        alert("Opération réussie avec succès.");
     }
 
     return(
