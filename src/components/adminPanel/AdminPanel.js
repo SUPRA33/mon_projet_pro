@@ -47,6 +47,16 @@ const AdminPanel = () => {
         setDisplayLinks(!displayLinks)
     }
 
+    // const req = new XMLHttpRequest();
+    // const header = req.headers.authorization;
+
+    // if (!header) {
+    //     alert("Vous devez être administrateur.")
+    //     navigate('/');
+    // } else {
+        
+    // }
+
     return(
         <>
             <header id="adminHeader">

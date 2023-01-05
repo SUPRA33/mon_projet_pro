@@ -15,7 +15,7 @@ const Header = () => {
         <header>
             <nav className="navbar">
                 <div className="logo">
-                    <img src={logo} alt="logo supra" />
+                    <Link to='/'><img src={logo} alt="logo supra" /></Link>
                 </div>
                 <ul className={`navbar_links ${displayLinks ? "" : "hide_nav"}`}>
                     <li>
@@ -34,7 +34,6 @@ const Header = () => {
                         <Link to='/contact'>CONTACT</Link>
                     </li>
                 </ul>
-                <div className="logo"></div>
                 <button className="burger" onClick={handleDisplayLinks}>
                     <i className="fa-solid fa-bars fa-3x"></i>
                 </button>

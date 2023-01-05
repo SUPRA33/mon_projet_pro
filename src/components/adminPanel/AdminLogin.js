@@ -27,7 +27,7 @@ const AdminLogin = () => {
             localStorage.setItem('jwt', JSON.stringify(loginData));
             navigate('/admin/panel');
         } else {
-            alert('La combinaison email/mot de passe ne correspond pas.')
+            alert("La combinaison email/mot de passe ne correspond pas.")
             navigate('/');
         }
     }
