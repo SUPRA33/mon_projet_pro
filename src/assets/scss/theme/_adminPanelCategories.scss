@@ -1,0 +1,41 @@
+div.crud_buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid rgba(50, 50, 93, 0.5);
+    padding: 0 2em;
+
+    button {
+        font-family: $mainFont;
+        font-size: 1em;
+        width: 180px;
+        margin-bottom: 2em;
+        padding: 0.5em 0;
+    }
+}
+
+div.display {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 2em;
+
+    div.displayItem {
+        background-color: $lightGrey;
+        padding: 1em;
+        margin-top: 1em;
+        border-radius: 1em;
+        p {
+            font-family: $mainFont;
+            font-size: 1.2em;
+        }
+    }
+
+    div.updateItem {
+        margin-top: 1em;
+        form {
+            width: 100%;
+        }
+    }
+}

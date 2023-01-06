@@ -25,11 +25,11 @@ const ResultList = () => {
                         <div className="item">
                                 <p>{date.toLocaleString('fr-FR', dateOptions)}</p>
                             <div className="result">
-                                <img src={`http://localhost/images/teams/${result.home_team_logo}`} alt="" />
+                                <img src={`http://localhost/images/teams/${result.home_team_logo}`} alt="logo équipe domicile" />
                                 <h4>{result.home_team_name}</h4>
                                 <span>{result.score_home} : {result.score_ext}</span>
                                 <h4>{result.ext_team_name}</h4>
-                                <img src={`http://localhost/images/teams/${result.ext_team_logo}`} alt="" />
+                                <img src={`http://localhost/images/teams/${result.ext_team_logo}`} alt="logo équipe extérieur" />
                             </div>
                         </div>
                     );

@@ -32,7 +32,7 @@ const AddTeam = () => {
                 </div>
                 <div className="item">
                     <label htmlFor="logo">Logo :</label>
-                    <input type="text" name="logo" placeholder="exemple : xesport.jpg" />
+                    <input type="text" name="logo" placeholder="exemple : xesport.png" />
                 </div>
                 <div className="submit">
                     <input type="submit" value="Valider" />

@@ -4,11 +4,11 @@ const AdminLogin = () => {
 
     const navigate = useNavigate();
 
-    const handleSubmit = async(event, req, res) => {
-        event.preventDefault();
+    const handleSubmit = async(e) => {
+        e.preventDefault();
 
-        const email = event.target.user_email.value;
-        const password = event.target.password.value;
+        const email = e.target.user_email.value;
+        const password = e.target.password.value;
 
         const jwtResponse = await fetch('http://localhost/api/admin', {
             method: 'POST',
