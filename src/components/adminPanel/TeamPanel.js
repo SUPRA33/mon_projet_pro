@@ -1,9 +1,8 @@
 import { useState } from "react";
-import AddShopItem from "./AddComponents/AddShopItem";
-import AddSponsor from "./AddComponents/AddSponsor";
 import AddTeam from "./AddComponents/AddTeam";
-import DisplayTeams from "./DisplayComponents/DisplayTeams";
-import UpdateTeams from "./UpdateComponents/UpdateTeams";
+import DeleteTeam from "./DeleteComponents/DeleteTeam";
+import DisplayTeam from "./DisplayComponents/DisplayTeam";
+import UpdateTeam from "./UpdateComponents/UpdateTeam";
 
 const TeamPanel = () => {
 
@@ -16,19 +15,16 @@ const TeamPanel = () => {
 
     const renderPanel = () => {
         if (panelToDisplay === 'display') {
-            return <DisplayTeams/>
+            return <DisplayTeam/>
         }
         else if (panelToDisplay === 'add') {
             return <AddTeam/>
         }
         else if (panelToDisplay === 'update') {
-            return <UpdateTeams/>
+            return <UpdateTeam/>
         }
-        else if (panelToDisplay === 'sponsor') {
-            return <AddSponsor/>
-        }
-        else if (panelToDisplay === 'shopItem') {
-            return <AddShopItem/>
+        else if (panelToDisplay === 'delete') {
+            return <DeleteTeam/>
         }
     };
 
@@ -41,10 +37,10 @@ const TeamPanel = () => {
     return(
         <>
             <div className="crud_buttons">
-                <button onClick={() => handlePanelClick('display')}>Afficher les équipes</button>
-                <button onClick={() => handlePanelClick('add')}>Ajouter une équipe</button>
-                <button onClick={() => handlePanelClick('update')}>Mettre à jour une équipe</button>
-                <button>Supprimer une équipe</button>
+                <button className={panelToDisplay === 'display' ? 'buttonSelected' : ''} onClick={() => handlePanelClick('display')}><i className="fa-solid fa-eye"></i></button>
+                <button className={panelToDisplay === 'add' ? 'buttonSelected' : ''}  onClick={() => handlePanelClick('add')}><i className="fa-solid fa-plus"></i></button>
+                <button className={panelToDisplay === 'update' ? 'buttonSelected' : ''}  onClick={() => handlePanelClick('update')}><i className="fa-solid fa-pen-to-square"></i></button>
+                <button className={panelToDisplay === 'delete' ? 'buttonSelected' : ''}  onClick={() => handlePanelClick('delete')}><i className="fa-solid fa-trash-can"></i></button>
             </div>
             {renderPanel()}
         </>

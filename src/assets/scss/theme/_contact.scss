@@ -36,10 +36,7 @@ main {
                 div.info {
                     display: flex;
                     justify-content: space-between;
-
-                    &:last-child {
-                    }
-    
+                    
                     div.content {
                         display: flex;
                         flex-direction: column;
@@ -76,6 +73,12 @@ main {
                     padding: 0.8em 2em;
                     resize: none;
                     height: 30%;
+                    width: 100%;
+                }
+                p.field_required {
+                    text-transform: none;
+                    font-size: 0.9rem;
+                    text-align: right;
                     width: 100%;
                 }
             }

@@ -6,7 +6,7 @@ section.adminPanel {
     h2 {
         color: $red;
         text-align: center;
-        margin-top: 2em;
+        margin-top: 1em;
 
         &::after {
             background-color: $red;
@@ -15,7 +15,7 @@ section.adminPanel {
 
     div.container {
         display: flex;
-        width: 800px;
+        width: 700px;
         border: 1px solid rgba(50, 50, 93, 0.5);
         padding: 2em;
         margin-bottom: 0;
@@ -37,6 +37,7 @@ section.adminPanel {
                 width: 180px;
                 margin-bottom: 2em;
                 padding: 0.5em 0;
+                cursor: pointer;
             }
 
             :last-child {
@@ -45,10 +46,17 @@ section.adminPanel {
             }
         }
 
+        .buttonSelected {
+            background-color: $red;
+            color: $white;
+            border-radius: 0.2em;
+            border: 2px solid rgba(0, 0, 0, 0);
+        }
+
         form {
             display: flex;
             flex-direction: column;
-            width: 60%;
+            width: 50%;
 
             div.item {
                 margin-bottom: 1.5em;;
@@ -92,41 +100,41 @@ header#adminHeader {
     display: none;
 }
 
-@media screen and (max-width: 768px) {
+// @media screen and (max-width: 768px) {
 
-    header#adminHeader {
-        display: block;
-        a {
-            cursor: pointer;
-        }
-    }
+//     header#adminHeader {
+//         display: block;
+//         a {
+//             cursor: pointer;
+//         }
+//     }
 
-    section.adminPanel {
-        span {
-            display: none;
-        }
-        div.container {
-            flex-direction: column;
-            align-items: center;
-            width: 80%;
+//     section.adminPanel {
+//         span {
+//             display: none;
+//         }
+//         div.container {
+//             flex-direction: column;
+//             align-items: center;
+//             width: 80%;
 
-            form {
-                align-items: center;
-                div.item {
-                    flex-direction: column;
-                    align-items: center;
-                    width: 250px;
+//             form {
+//                 align-items: center;
+//                 div.item {
+//                     flex-direction: column;
+//                     align-items: center;
+//                     width: 250px;
     
-                    label,input,select {
-                        margin: 0;
-                        text-align: left;
-                        width: 100%;
-                    }
-                }
-            }
-            div.buttons {
-                display: none;
-            }
-        }
-    }
-}
+//                     label,input,select {
+//                         margin: 0;
+//                         text-align: left;
+//                         width: 100%;
+//                     }
+//                 }
+//             }
+//             div.buttons {
+//                 display: none;
+//             }
+//         }
+//     }
+// }

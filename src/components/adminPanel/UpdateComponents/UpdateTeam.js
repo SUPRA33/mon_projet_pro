@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const UpdateTeams = () => {
+const UpdateTeam = () => {
 
     const [selectedTeam, setSelectedTeam] = useState(null);
     const [teams, setTeams] = useState([]);
@@ -20,16 +20,16 @@ const UpdateTeams = () => {
         setSelectedTeam(selectedTeam);
     };
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
-        const team_name = event.target.team_name.value;
-        const logo = event.target.logo.value;
+        const team_name = e.target.team_name.value;
+        const logo = e.target.logo.value;
 
         const jwtLocalStorage = localStorage.getItem('jwt');
         const token = JSON.parse(jwtLocalStorage).access_token;
 
-        await fetch('http://localhost/api/teams', {
+        await fetch(`http://localhost/api/teams/${selectedTeam.id}`, {
             method: 'PATCH',
             headers: {
                 authorization: 'Bearer ' + token,
@@ -58,7 +58,7 @@ const UpdateTeams = () => {
             <>
                 <div className="displayItem">
                     <p>id : {selectedTeam.id}</p>
-                    <p>name : {selectedTeam.team_name}</p>
+                    <p>team_name : {selectedTeam.team_name}</p>
                     <p>logo : {selectedTeam.logo}</p>
                 </div>
                 <div className="updateItem">
@@ -82,4 +82,4 @@ const UpdateTeams = () => {
     );
 }
 
-export default UpdateTeams;
+export default UpdateTeam;

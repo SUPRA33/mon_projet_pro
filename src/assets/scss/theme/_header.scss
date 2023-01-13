@@ -69,7 +69,6 @@ header {
         }
     }
 }
-
 @media screen and (max-width: 880px) {
     header {
         nav.navbar {
@@ -106,18 +105,6 @@ header {
                 li {
                     border: none;
 
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        width: 50%;
-                        height: 5px;
-                        bottom: -0.5em;
-                        transform: translate(-50%, -50%);
-                        left: 50%;
-                        right: 50%;
-                        background-color: $grey;
-                        transform-origin: bottom;
-                    }
                     a {
                         display: block;
                         margin-bottom: 1.5em;
@@ -130,7 +117,7 @@ header {
                     }
                 }
 
-                &.hide_nav{
+                &.hide_nav {
                     display: none
                 }
             }
@@ -150,8 +137,5 @@ header {
             color: $white;
            }
         }
-    }
-    .banner {
-        margin-top: 70px;
     }
 }

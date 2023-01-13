@@ -8,9 +8,10 @@ div.crud_buttons {
     button {
         font-family: $mainFont;
         font-size: 1em;
-        width: 180px;
+        width: 50px;
         margin-bottom: 2em;
         padding: 0.5em 0;
+        cursor: pointer;
     }
 }
 
@@ -19,13 +20,17 @@ div.display {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-left: 2em;
+
+    select {
+        width: 255px;
+    }
 
     div.displayItem {
         background-color: $lightGrey;
         padding: 1em;
         margin-top: 1em;
         border-radius: 1em;
+
         p {
             font-family: $mainFont;
             font-size: 1.2em;
@@ -36,6 +41,15 @@ div.display {
         margin-top: 1em;
         form {
             width: 100%;
+        }
+    }
+
+    div.deleteItem {
+        button {
+            font-family: $mainFont;
+            font-size: 1em;
+            padding: 0.5em 2em;
+            margin-top: 1.5em;
         }
     }
 }

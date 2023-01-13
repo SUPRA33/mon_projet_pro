@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const DisplayTeams = () => {
+const DisplayTeam = () => {
 
     const [selectedTeam, setSelectedTeam] = useState(null);
     const [teams, setTeams] = useState([]);
@@ -42,4 +42,4 @@ const DisplayTeams = () => {
     );
 }
 
-export default DisplayTeams;
+export default DisplayTeam;

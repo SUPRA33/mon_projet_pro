@@ -19,7 +19,7 @@ const Contact = () => {
         const phone = e.target.phone.value;
         const email = e.target.email.value;
         const message_object = e.target.message_object.value;
-        const message = e.target.message_send.value;
+        const message = e.target.message.value;
 
         if (firstName.length === 0 || lastName.length === 0 || email.length === 0 || message.length === 0) {
             setError(true);
@@ -98,9 +98,10 @@ const Contact = () => {
                         </div>
                         <div className="message">
                             <label htmlFor="message">Message*</label>
-                            <textarea name="message_send" cols="80" rows="8" placeholder="Veuillez saisir votre demande." onChange={e=>setMessage(e.target.value)}></textarea>
+                            <textarea name="message" cols="80" rows="8" placeholder="Veuillez saisir votre demande." onChange={e=>setMessage(e.target.value)}></textarea>
                             {error && message.length <= 0  ?
                             <label className="error">Message ne peut être vide</label>:""}
+                            <p className="field_required">* Champ obligatoire</p>
                         </div>
                         <div>
                             <button>Envoyer</button>

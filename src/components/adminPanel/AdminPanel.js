@@ -1,11 +1,5 @@
 import { useEffect, useState } from "react";
-import AddTeam from "./AddComponents/AddTeam";
-import AddMember from "./AddComponents/AddMember";
-import AddResult from "./AddComponents/AddResult";
-import AddSponsor from "./AddComponents/AddSponsor";
-import AddShopItem from "./AddComponents/AddShopItem";
 import { useNavigate } from "react-router-dom";
-import logo from '../../assets/img/supra_white.png';
 import jwtDecode from "jwt-decode";
 import TeamPanel from "./TeamPanel";
 
@@ -21,7 +15,7 @@ const AdminPanel = () => {
         } catch (error) {
           return null;
         }
-    }
+    } 
 
     useEffect(() => {
         // Je vérifie si l'utilisateur à un token valide avec le role "admin".
@@ -45,18 +39,6 @@ const AdminPanel = () => {
         if (panelToDisplay === 'team') {
             return <TeamPanel/>
         }
-        else if (panelToDisplay === 'member') {
-            return <AddMember/>
-        }
-        else if (panelToDisplay === 'result') {
-            return <AddResult/>
-        }
-        else if (panelToDisplay === 'sponsor') {
-            return <AddSponsor/>
-        }
-        else if (panelToDisplay === 'shopItem') {
-            return <AddShopItem/>
-        }
     };
 
     const [displayLinks, setDisplayLinks] = useState(false);
@@ -72,7 +54,7 @@ const AdminPanel = () => {
 
         return(
             <>
-                <header id="adminHeader">
+                {/* <header id="adminHeader">
                     <nav className="navbar">
                     <div className="logo">
                         <img src={logo} alt="logo supra" />
@@ -102,17 +84,18 @@ const AdminPanel = () => {
                             <i className="fa-solid fa-bars fa-3x"></i>
                         </button>
                     </nav>
-                </header>
+                </header> */}
                 <main>
                     <section className="adminPanel">
                         <h2><span>PANEL D'</span>ADMINISTRATION</h2>
                         <div className="container">
                             <div className="buttons">
-                                <button onClick={() => handlePanelClick('team')}>EQUIPES</button>
-                                <button onClick={() => handlePanelClick('member')}>MEMBRES</button>
-                                <button onClick={() => handlePanelClick('result')}>RESULTATS</button>
-                                <button onClick={() => handlePanelClick('sponsor')}>SPONSORS</button>
-                                <button onClick={() => handlePanelClick('shopItem')}>BOUTIQUE</button>
+                                <button className={panelToDisplay === 'team' ? 'buttonSelected' : ''}  onClick={() => handlePanelClick('team')}>EQUIPES</button>
+                                <button className={panelToDisplay === 'member' ? 'buttonSelected' : ''}  onClick={() => handlePanelClick('member')}>MEMBRES</button>
+                                <button className={panelToDisplay === 'result' ? 'buttonSelected' : ''} onClick={() => handlePanelClick('result')}>RESULTATS</button>
+                                <button className={panelToDisplay === 'sponsor' ? 'buttonSelected' : ''} onClick={() => handlePanelClick('sponsor')}>SPONSORS</button>
+                                <button className={panelToDisplay === 'shopItem' ? 'buttonSelected' : ''} onClick={() => handlePanelClick('shopItem')}>BOUTIQUE</button>
+                                <button className={panelToDisplay === 'user' ? 'buttonSelected' : ''} onClick={() => handlePanelClick('user')}>UTILISATEUR</button>
                                 <button onClick={() => logOut()}>Se déconnecter</button>
                             </div>
                             {renderPanel()}
