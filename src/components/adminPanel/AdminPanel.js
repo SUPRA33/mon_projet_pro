@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import jwtDecode from "jwt-decode";
 import TeamPanel from "./TeamPanel";
+import UserPanel from "./UserPanel";
 
 const AdminPanel = () => {
 
@@ -38,6 +39,9 @@ const AdminPanel = () => {
     const renderPanel = () => {
         if (panelToDisplay === 'team') {
             return <TeamPanel/>
+        }
+        else if (panelToDisplay === 'user') {
+            return <UserPanel/>
         }
     };
 
@@ -95,8 +99,8 @@ const AdminPanel = () => {
                                 <button className={panelToDisplay === 'result' ? 'buttonSelected' : ''} onClick={() => handlePanelClick('result')}>RESULTATS</button>
                                 <button className={panelToDisplay === 'sponsor' ? 'buttonSelected' : ''} onClick={() => handlePanelClick('sponsor')}>SPONSORS</button>
                                 <button className={panelToDisplay === 'shopItem' ? 'buttonSelected' : ''} onClick={() => handlePanelClick('shopItem')}>BOUTIQUE</button>
-                                <button className={panelToDisplay === 'user' ? 'buttonSelected' : ''} onClick={() => handlePanelClick('user')}>UTILISATEUR</button>
-                                <button onClick={() => logOut()}>Se déconnecter</button>
+                                <button className={panelToDisplay === 'user' ? 'buttonSelected' : ''} onClick={() => handlePanelClick('user')}>UTILISATEURS</button>
+                                <button onClick={logOut}>Se déconnecter</button>
                             </div>
                             {renderPanel()}
                         </div>
